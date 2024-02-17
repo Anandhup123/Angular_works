@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>-----EVENT HANDLING-----</h1>
+
+    <div [style]="events">
+        <!-- counter -->
+        <input type="button" value="counter" (click)="counter()" class="inp1">
+        <div>{{count}}</div>
+        <p>!-------------------------------------------------------------------------------------!</p>
+
+        <!-- advanced counter -->
+        <input type="button" value="count_up" (click)="count_up()" class="inp1" >
+        <input type="button" value="count_down" (click)="count_down()" class="inp1">
+        <input type="button" value="Reset" (click)="reset()" class="inp1">
+        <input type="button" value="Pre" (click)="preview()" class="inp1">
+        <div>{{value}}</div>
+        <p>!-------------------------------------------------------------------------------------!</p>
+
+        <!-- box color changing -->
+        <div>
+        <input type="button" value="Red" (click)="change1()" class="inp1">
+        <input type="button" value="Green" (click)="change2()" class="inp1">
+        <input type="button" value="Blue" (click)="change3()" class="inp1">
+        <div [style]="boxstyle" [style.background-color]="color">
+            {{color}}
+        </div>
+        <br><br>
+        <!-- opacity changing -->
+        <div>
+            <input type="button" value="blue" (click)="blue()" class="inp1">
+            <input type="button" value="red" (click)="red()" class="inp1">
+            <input type="button" value="green" (click)="green()" class="inp1"><br>
+            <input type="button" value="opacity_up" (click)="opacity_up()" class="inp1">
+            <input type="button" value="opacity_down" (click)="opacity_down()" class="inp1">
+            <input type="button" value="Max" (click)="opacity_Max()" class="inp1">
+            <input type="button" value="Min" (click)="opacity_Min()" class="inp1">
+            <div [style]="boxstyle" [style.opacity]="op" [style.background-color]="co"></div>
+        </div>
+        <!-- end of opacity changing code -->
+        
+        </div>
+        <!-- mouse hover -->
+        <div (mouseenter)="mouseevent1()" (mouseleave)="mouseevent2()" [style]="hover" [style.background-color]="bg1"></div><br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+.card-1{
+    width: 350px;
+    height: 500px;
+    background-color: antiquewhite;
+    text-align: center;
+    border: 1px solid;
+}
+.inner1{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.image-div{
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 80px;
+    width: 200px;
+    height: 230px;
+    background-color: white;
+margin-bottom: 20px;
+}
+
+img{
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    margin: 25px;
+}
+
+.imgs{
+    margin: 20px;
+    background-color: antiquewhite;
+    width: 250px;
+    height: 350px;
+}
+h2{
+    text-align: center;
+}
+
+
+/* style binding */
+.n1{
+  width: 700px; 
+}
+.n2{
+    font-size: 1.6rem;
+    font-style: italic; 
+    color: blue;
+}
+
+.n4{
+    font-weight: 500;
+}

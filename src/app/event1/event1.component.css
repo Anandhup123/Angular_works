@@ -1,0 +1,12 @@
+.inp1{
+    margin: 10px;
+    text-align: center;
+    height: 30px;
+    font-size: 1rem;
+
+}
+.bg2{
+    border-radius: 20px;
+    background-color: red;
+    border: 2px blue;
+}

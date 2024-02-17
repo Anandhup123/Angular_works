@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Two way data binding  -->
+    <!-- value passing from ts=>html and html=>ts -->
+    <div style="text-align: center;">
+        <input type="number" [(ngModel)]="count"> <br><br>
+        <h3>{{count}}</h3>  <br> 
+<p>!------------------------------------------------------!</p>
+        <!-- odd or even checking -->
+        <input type="number" [(ngModel)]="num">
+        <button style="margin-left: 10px;" (click)="check()">Odd or Even</button> 
+        <button style="margin-left: 10px;" (click)="clear()">Clear Screen</button> <br><br>
+       <h3> {{str}} </h3>
+    </div>
+
+    
+</body>
+</html>

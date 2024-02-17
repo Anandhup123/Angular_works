@@ -1,0 +1,7 @@
+.table th{
+    background-color: aquamarine;
+    border: 2px solid blue;
+}
+.table td{
+    color: red;
+}
