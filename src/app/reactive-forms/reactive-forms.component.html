@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reactive forms</h1>
+    <!-- creaating a form directive to connect with the ts to template forms using formGroup -->
+
+    <form [formGroup]="registraionform" (ngSubmit)="onsubmitted()">
+
+        <input type="text" name="firstname" class="form-control" placeholder="First name" formControlName="firstname"
+        [ngClass]="{'is-invalid':submit&&functioncall.firstname.errors}">
+
+            <div *ngIf="submit&&functioncall.firstname.errors"  class="text-danger">Firstname is required</div>
+
+        <input type="text" name="phone" class="form-control" placeholder="Phone" formControlName="phone" pattern="[5-9]{1}[0-9]{9}"
+        [ngClass]="{'is-invalid':submit&&functioncall.phone.errors}">
+        <div class="invalid-feedback" *ngIf="submit&&functioncall.phone.errors">
+            <div *ngIf="functioncall.phone.errors">Phone number is required</div>
+        </div>
+        
+        <input type="email" name="email" class="form-control" placeholder="Email" formControlName="email"
+        [ngClass]="{'is-invalid':submit&&functioncall.email.errors}">
+        <div class="invalid-feedback" *ngIf="submit&&functioncall.email.errors">
+            <div *ngIf="functioncall.email.errors">Email is required</div>
+        </div>
+
+        <input type="password" name="password" class="form-control" placeholder="password" formControlName="password"
+        [ngClass]="{'is-invalid':submit&&functioncall.email.errors}">
+        <div class="invalid-feedback" *ngIf="submit&&functioncall.password.errors">
+            <div *ngIf="functioncall.password.errors">Password is required</div>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

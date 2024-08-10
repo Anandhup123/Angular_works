@@ -6,33 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        Name:{{name}}---Age:{{age}}---Profession:<label [ngStyle]="profstyle()" >{{prof}}</label>
-                          <hr>
+    <div [hidden]="prof=='Clerk' && age<25 ?false:true">
+        Name:{{name}}---Age:<label [style.color]="age>25?'green':''">{{age}}</label> ---Profession:<label >{{prof}}</label>
+                        <hr>
     </div>
 </body>
 </html>
 
 
 
-
-
-
-
-
 <!--[style.color]="age>24?'green':'blue'" 
     [style.color]="prof=='Cleark'?'red':'blue'" -->
 
-
-
-
-
-
-
-
-
-
-
-
+    <!-- [ngStyle]="profstyle()" -->
 
 <!-- [class.dangerzone]="age>24" [class.engineers]="prof=='Engineer'" -->
+
+
+

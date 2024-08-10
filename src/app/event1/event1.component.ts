@@ -9,7 +9,8 @@ export class Event1Component implements OnInit {
   events="background-color: bisque; width: 800px; height: 1200px; text-align: center;"
 
 // counter
-count:number=0;
+count=0;
+
 counter(){
   this.count++;
 }
@@ -32,24 +33,32 @@ count_down(){
 reset(){
   this.value=0;
 }
-preview(){
+preview(){ 
   this.value=this.pre
 }
+
+change=""
+changeToRed(){
+  this.change='red'
+}
+colorRemove(){
+  this.change=""
+}
+
+
+
 // color changing box
 
-color=""
+public color=""
+thiscolor=""
 boxstyle="width:200px; height:200px; border:1px solid black; text-align:center; margin-left:325px; margin-top:50px"
-change1(){
-this.color="red"
-}
-change2(){
-  this.color="green"
-}
-change3(){
-  this.color="blue"
+change1(thiscolor:string){
+this.color=thiscolor
 }
 
+
 // opacity
+
 op:number=0.5
 co=""
 red(){
@@ -61,6 +70,7 @@ blue(){
 green(){
   this.co="green"
 }
+
 opacity_up(){
   this.op=this.op+0.05
 }

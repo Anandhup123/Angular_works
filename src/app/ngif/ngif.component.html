@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 600px;">
+    <h1>ngif Examples</h1><br>
+    <input type="number" [(ngModel)]="price"><br><br>
+    <button type="submit" class="btn btn-primary" (click)="calculation()">Calculate</button>
+<!-- ng if example one -->
+    <div *ngIf="value>40 ; then thisblock else thatblock">
+    </div>
+    <ng-template #thisblock>
+        {{value+" is Greater than 40"}}
+    </ng-template>
+
+    <ng-template #thatblock>
+        {{value+" is less than 40"}}
+    </ng-template><br><br>
+
+
+<!-- ng if example two -->
+    <h1>Simple example of ngIf </h1>
+ 
+ 
+<div class="row">
+  <input type="checkbox" [(ngModel)]="showMe" />
+</div>
+ 
+<h1>ngIf </h1>
+ 
+<p *ngIf="showMe">
+  ShowMe is checked
+</p>
+<p *ngIf="!showMe">
+  ShowMe is unchecked
+</p>
+ 
+<h1>ngIf Else</h1>
+ 
+<p *ngIf="showMe; else elseBlock1">
+  ShowMe is checked
+</p>
+ 
+<ng-template #elseBlock1>
+  <p>ShowMe is unchecked Using elseBlock</p>
+</ng-template>
+ 
+<h1>ngIf then else</h1>
+ 
+<p *ngIf="showMe; then thenBlock2 else elseBlock2">
+  This is not rendered
+</p>
+ 
+<ng-template #thenBlock2>
+  <p>ShowMe is checked Using thenblock</p>
+</ng-template>
+ 
+<ng-template #elseBlock2>
+  <p>ShowMe is unchecked Using elseBlock</p>
+</ng-template>
+ 
+<h1>using hidden </h1>
+ 
+<p [hidden]="showMe">
+    content to render, when the condition is true  using hidden property binding
+</p>
+ 
+<p [hidden]="!showMe">
+    content to render, when the condition is false. using hidden property binding
+</p>
+</body>
+</html>

@@ -1,24 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!-- Two way data binding  -->
-    <!-- value passing from ts=>html and html=>ts -->
-    <div style="text-align: center;">
-        <input type="number" [(ngModel)]="count"> <br><br>
-        <h3>{{count}}</h3>  <br> 
-<p>!------------------------------------------------------!</p>
-        <!-- odd or even checking -->
-        <input type="number" [(ngModel)]="num">
-        <button style="margin-left: 10px;" (click)="check()">Odd or Even</button> 
-        <button style="margin-left: 10px;" (click)="clear()">Clear Screen</button> <br><br>
-       <h3> {{str}} </h3>
-    </div>
 
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Two way data binding  -->
+  <!-- value passing from ts=>html and html=>ts -->
+  <div style="text-align: center">
+    <input type="number" class="btn btn-primary" [(ngModel)]="count" /> <br /><br />
+    <h3>{{ count }}</h3>
+    <br />
+    <p>!------------------------------------------------------!</p>
+
+    <!-- odd or even checking -->
+    <input type="number" [(ngModel)]="num" />
+    <button style="margin-left: 10px" (click)="check()">Odd or Even</button>
+    <button style="margin-left: 10px" (click)="clear()">Clear Screen</button>
+    <br /><br />
+    <h3>{{ str }}</h3>
+
+    <p>!------------------------------------------------------!</p>
+    <!-- form calculation -->
+
+  </div>
+  <div style="margin-top: 50px; padding-top: 20px; border: 3px solid black">
+    <input type="number" [(ngModel)]="calc.v1" />&nbsp;
+    <input type="number" [(ngModel)]="calc.v2" /><br />
+    <br />
+    <input type="button" value="Sum" class="btn btn-primary" (click)="add()" />&nbsp;
+    <input type="button" value="Substract" class="btn btn-success" (click)="substract()" />&nbsp;
+    <input type="button" value="Multiply" class="btn btn-danger" (click)="multi()" />&nbsp;
+    <input type="button" value="Divition" class="btn btn-warning" (click)="division()" />
+    <input type="button" value="Reset" class="btn" (click)="reset()" /><br />
+    <br />
+    <h2 [style.color]="vcolor" [hidden]="hide">
+      {{ operation }} = {{ calc.sol }}
+    </h2>
+  </div>
+  <br /><br />
+
+  <!-- form marklist -->
+  <input type="button" value="Find your Grade" (click)="findme()" class="btn btn-info text-white"
+    [hidden]="openhidden" />&nbsp;
+  <input type="button" value="Close" (click)="closeme()" class="btn btn-warning text-white" 
+  [hidden]="closehidden" />
+
+  <div style="margin-top: 40px; padding-top: 25px; border: 3px solid" [hidden]="main_box">
+    <b>Subject Name : </b><input type="text" [(ngModel)]="validate.name" />
+    <br/><br/>
+    <b>Subject Mark </b>(out of 100): <input type="number" [(ngModel)]="validate.mark" /> <br />
+    <br />
+    <input type="button" class="btn btn-primary" value="Validate" (click)="validation()" />&nbsp;
+    <input type="button" value="Reset" class="btn btn-danger" (click)="clear1()" /><br /><br />
+
+    <h2 [style.color]="this.validate.Grade == 'Fail' || this.validate.Grade == 'Invalid Mark'? 'red': 'green'" [hidden]="validate.show">
+      {{ validate.name }} Grade is : {{ this.validate.Grade }}
+    </h2>
+  </div>
+
+  <br><br><br><br><br><br><br>
+
+  <input type="number" placeholder="enter something" [(ngModel)]="values"><br>
+  <button (click)="checkOddeven()">Check</button>
+  <button (click)="clearall()">Clear</button>
+  <br>{{ans}}
+
 </body>
+
 </html>

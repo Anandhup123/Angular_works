@@ -12,4 +12,5 @@ export class Bind2Component implements OnInit {
   ngOnInit(): void {
   }
 
+  
 }

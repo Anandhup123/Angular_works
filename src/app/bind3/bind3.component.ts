@@ -15,10 +15,10 @@ export class Bind3Component implements OnInit {
 profstyle(){
   let styles={
     'font-weight':this.prof=='Engineer'?'bold':'',
-    'color':this.prof=='Engineer'?'green':'',
+    'color':this.age>25?'green':'',
     'font-size':this.prof=='Engineer'?'2.5rem':''
   };
-  return styles
+  return styles;
 }
 
 
